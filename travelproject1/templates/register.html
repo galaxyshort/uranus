@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reg</title>
+     <style>
+    h1{
+    text-align:center; font-family:times;
+    color:DarkSlateGrey;
+    }
+    h2{
+    text-align:center;
+    color:red;
+    }
+    form{
+            text-align:center;
+        }
+
+      </style>
+</head>
+<body style="background-color:SpringGreen">
+<h1>REGISTRATION FORM</h1>
+<form method="post" action=" ">
+    {% csrf_token %}
+
+     <label>User Name:&nbsp&nbsp<input type="text" name="username" size="22"></label><br><br>
+     <label>First Name:&nbsp&nbsp<input type="text" name="first_name" size="22"></label><br><br>
+     <label>Last Name:&nbsp&nbsp<input type="text" name="last_name" size="22"></label><br><br>
+     <label>Email:&nbsp<input type="email" name="mail_id" size="22"></label><br><br>
+     <label>Password:&nbsp<input type="password" name="password" size="18"></label><br><br>
+     <label>Confirm Password:&nbsp<input type="password" name="password1" size="18"></label><br><br>
+     <input type="Submit">
+</form>
+{% for i in messages %}
+<h2>{{i}}</h2>
+{% endfor %}
+
+</body>
+</html>
